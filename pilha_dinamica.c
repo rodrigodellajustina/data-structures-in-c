@@ -17,17 +17,18 @@ void push(Pilha3 *topo, int dado){
      
      Pilha3 novo;
      
-     novo = (Pilha3)malloc(sizeof(struct Pilha)); /* cria um novo nó */
+     novo = (Pilha3)malloc(sizeof(struct Pilha)); 
      
      if(novo != NULL){ 
          novo->dado = dado; 
-         novo->proximo = 
+         novo->proximo = *topo; 
          *topo = novo; 
      }
      else 
          printf("Nao ha memoria disponivel\n");
      
 }
+
 
 int pop(Pilha3 *topo){
      
