@@ -23,9 +23,10 @@ void push(Pilha3 *topo, int dado){
          novo->dado = dado; 
          novo->proximo = *topo; 
          *topo = novo; 
+      
      }
      else 
-         printf("Nao ha memoria disponivel\n");
+         printf("Falha de memoria...\n");
      
 }
 
@@ -70,17 +71,21 @@ void imprime_pilha(Pilha3 atual){
 int main(){
     
     Pilha3 minhapilha = NULL;    
-    
-    
+       
 	push(&minhapilha, 10);
 	push(&minhapilha, 20);
 	push(&minhapilha, 30);
+	push(&minhapilha, 40);
+	
+	imprime_pilha(minhapilha);	
+	
+	pop(&minhapilha);
 	
 	if(!esta_vazia(minhapilha)){
 		printf("\nO valor retirado eh : %d \n", pop(&minhapilha));
 	}
 	
-	imprime_pilha(minhapilha);	
+	
     
     return 0;
 }
